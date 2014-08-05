@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="supervisor.maquina.ControlMaquinaController">
+  <children>
+    <HBox prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <Accordion>
+          <panes>
+            <TitledPane animated="false" text="Movimiento" fx:id="x2">
+                     <content>
+                        <ScrollPane hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0" vbarPolicy="NEVER">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox prefHeight="200.0" prefWidth="200.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <HBox alignment="CENTER" prefHeight="30.0" prefWidth="196.0" spacing="15.0" VBox.vgrow="NEVER">
+                                             <children>
+                                                <Label prefHeight="12.0" prefWidth="60.0" text="Pos Eje X :" />
+                                                <TextField fx:id="txtFldPosX" prefHeight="18.0" prefWidth="100.0" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER" prefHeight="30.0" prefWidth="196.0" spacing="15.0">
+                                             <children>
+                                                <Label prefHeight="12.0" prefWidth="60.0" text="Pos Eje Y :" />
+                                                <TextField fx:id="txtFldPosY" prefHeight="18.0" prefWidth="100.0" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER" prefHeight="30.0" prefWidth="196.0" spacing="15.0">
+                                             <children>
+                                                <Label prefHeight="12.0" prefWidth="60.0" text="Pos Eje Z :" />
+                                                <TextField fx:id="txtFldPosZ" prefHeight="18.0" prefWidth="100.0" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER" prefHeight="30.0" prefWidth="196.0" spacing="15.0">
+                                             <children>
+                                                <Label prefHeight="12.0" prefWidth="60.0" text="Pos Eje R :" />
+                                                <TextField fx:id="txtFldPosR" prefHeight="18.0" prefWidth="100.0" />
+                                             </children>
+                                          </HBox>
+                                          <Button mnemonicParsing="false" onAction="#handleButtonDetener" prefHeight="25.0" prefWidth="197.0" text="Detener" />
+                                          <Button mnemonicParsing="false" onAction="#handleButtonMoverLibre" prefHeight="25.0" prefWidth="200.0" text="Mover Libre(Directo)" />
+                                          <Button layoutX="10.0" layoutY="185.0" mnemonicParsing="false" onAction="#handleButtonMoverHerramienta" prefHeight="25.0" prefWidth="200.0" text="Mover Herramienta" />
+                                          <HBox alignment="CENTER" prefHeight="30.0" prefWidth="196.0" spacing="15.0">
+                                             <children>
+                                                <Label prefHeight="12.0" prefWidth="60.0" text="Reactor :" />
+                                                <TextField fx:id="txtFldReactor" prefHeight="18.0" prefWidth="100.0" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER" layoutX="10.0" layoutY="275.0" prefHeight="30.0" prefWidth="196.0" spacing="15.0">
+                                             <children>
+                                                <Label prefHeight="12.0" prefWidth="60.0" text="Sector :" />
+                                                <TextField fx:id="txtFldSector" prefHeight="18.0" prefWidth="100.0" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER" layoutX="10.0" layoutY="315.0" prefHeight="30.0" prefWidth="196.0" spacing="15.0">
+                                             <children>
+                                                <Label prefHeight="12.0" prefWidth="60.0" text="X relativo :" />
+                                                <TextField fx:id="txtFldPosXrel" prefHeight="18.0" prefWidth="100.0" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER" layoutX="10.0" layoutY="460.0" prefHeight="30.0" prefWidth="196.0" spacing="15.0">
+                                             <children>
+                                                <Label prefHeight="12.0" prefWidth="60.0" text="Y relativo :" />
+                                                <TextField fx:id="txtFldPosYrel" prefHeight="18.0" prefWidth="100.0" />
+                                             </children>
+                                          </HBox>
+                                          <Button layoutX="10.0" layoutY="205.0" mnemonicParsing="false" onAction="#handleButtonIrReactor" prefHeight="25.0" prefWidth="200.0" text="Mezclar" />
+                                          <Button layoutX="10.0" layoutY="355.0" mnemonicParsing="false" onAction="#handleButtonIntroHerramienta" prefHeight="25.0" prefWidth="200.0" text="Introducir Herramienta" />
+                                          <Button layoutX="10.0" layoutY="470.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="200.0" text="Mezclar" />
+                                          <Button layoutX="10.0" layoutY="390.0" mnemonicParsing="false" onAction="#handleButtonRetHerramienta" prefHeight="25.0" prefWidth="200.0" text="Retirar Herramienta" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </ScrollPane>
+                     </content>
+            </TitledPane>
+            <TitledPane animated="false" expanded="true" text="Conección" fx:id="x3">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                    <VBox alignment="TOP_RIGHT" prefHeight="530.0" prefWidth="200.0" spacing="10.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="2.0">
+                      <children>
+                        <GridPane hgap="15.0" vgap="5.0">
+                          <children>
+                            <Label text="IP :" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                            <Label text="Puerto :" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                            <TextField fx:id="txtFldIP" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                            <TextField fx:id="txtFldPuerto" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                          </children>
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="87.0" minWidth="10.0" prefWidth="45.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="132.0" minWidth="10.0" prefWidth="132.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                        </GridPane>
+                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#handleButtonConnect" prefHeight="30.0" prefWidth="90.0" text="Conectar" />
+                        <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleButtonDisconnect" prefHeight="30.0" prefWidth="90.0" text="Desconectar" />
+                        <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="192.0" spacing="15.0" VBox.vgrow="NEVER">
+                          <children>
+                            <Label prefWidth="45.0" text="Estado :" />
+                            <Label fx:id="lblConeccion" text="Desconectado" />
+                          </children>
+                        </HBox>
+                      </children>
+                    </VBox>
+                  </children>
+                </AnchorPane>
+              </content>
+            </TitledPane>
+            <TitledPane animated="false" expanded="false" text="Temperatura">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                    <GridPane hgap="15.0" layoutX="4.0" layoutY="4.0" vgap="5.0">
+                      <children>
+                        <Button mnemonicParsing="false" onAction="#handleIniciarTemp" prefWidth="127.0" text="Iniciar Muestreo" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                        <Button mnemonicParsing="false" onAction="#handleDetenerTemp" prefWidth="127.0" text="Detener Muestreo" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                      </children>
+                      <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="87.0" minWidth="10.0" prefWidth="54.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="145.0" minWidth="10.0" prefWidth="123.0" />
+                      </columnConstraints>
+                      <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      </rowConstraints>
+                    </GridPane>
+                  </children>
+                </AnchorPane>
+              </content>
+            </TitledPane>
+                  <TitledPane animated="false" text="Agitador">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox layoutX="21.0" layoutY="8.0" prefHeight="499.0" prefWidth="200.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="30.0" prefWidth="196.0" spacing="15.0">
+                                       <children>
+                                          <Label prefHeight="12.0" prefWidth="60.0" text="Sentido" />
+                                          <TextField fx:id="txtFldSentVar" prefHeight="18.0" prefWidth="100.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="30.0" prefWidth="196.0" spacing="15.0">
+                                       <children>
+                                          <Label prefHeight="12.0" prefWidth="60.0" text="Velocidad :" />
+                                          <TextField fx:id="txtFldVelVar" prefHeight="18.0" prefWidth="100.0" />
+                                       </children>
+                                    </HBox>
+                                    <Button mnemonicParsing="false" onAction="#handleMoverAgitador" prefWidth="300.0" text="Mover" />
+                                    <Button mnemonicParsing="false" onAction="#handleDetenerAgitador" prefWidth="300.0" text="Detener" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </TitledPane>
+          </panes>
+        </Accordion>
+        <TabPane prefHeight="600.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" HBox.hgrow="ALWAYS">
+          <tabs>
+            <Tab text="Estado">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                    <GridPane prefHeight="571.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                      <children>
+                        <Label text="Pos Eje X :" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <Label fx:id="PX" text=".........." GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text="Pos Eje Y :" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <Label fx:id="PY" text=".........." GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text="Pos Eje Z :" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                        <Label fx:id="PZ" text=".........." GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label text="Pos Eje R :" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                        <Label fx:id="PR" ellipsisString="......" text=".........." GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                    <Label text="Reactor :" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                                    <Label text="Sector :" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                                    <Label fx:id="rAct" text="......." GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                                    <Label fx:id="sAct" text="......." GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                                    <Label layoutX="10.0" layoutY="28.0" text="Pos Eje X :" GridPane.rowIndex="6" />
+                                    <Label layoutX="10.0" layoutY="81.0" text="Pos Eje Y :" GridPane.rowIndex="7" />
+                                    <Label layoutX="10.0" layoutY="133.0" text="Pos Eje Z :" GridPane.rowIndex="8" />
+                                    <Label fx:id="PosX" layoutX="70.0" layoutY="28.0" text=".........." GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                    <Label fx:id="PosY" layoutX="70.0" layoutY="28.0" text=".........." GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                    <Label fx:id="PosZ" layoutX="70.0" layoutY="28.0" text=".........." GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                                    <Label text="CNC" GridPane.columnIndex="1" />
+                                    <Label text="HERRAMIENTA" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                    <Label layoutX="10.0" layoutY="224.0" text="Pos Eje R :" GridPane.rowIndex="9" />
+                                    <Label fx:id="PosR" layoutX="70.0" layoutY="224.0" text=".........." GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                                    <Label layoutX="151.0" layoutY="174.0" text="Rel X :" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                                    <Label layoutX="151.0" layoutY="174.0" text="Rel Y :" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                                    <Label fx:id="PosRX" layoutX="211.0" layoutY="174.0" text="......." GridPane.columnIndex="3" GridPane.rowIndex="8" />
+                                    <Label fx:id="PosRY" layoutX="211.0" layoutY="224.0" text="......." GridPane.columnIndex="3" GridPane.rowIndex="9" />
+                      </children>
+                      <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="50.0" prefWidth="50.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="81.0" minWidth="50.0" prefWidth="81.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="49.0" prefWidth="49.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="70.0" minWidth="50.0" prefWidth="60.0" />
+                      </columnConstraints>
+                      <rowConstraints>
+                                    <RowConstraints maxHeight="30.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="25.0" minHeight="20.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="25.0" minHeight="20.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="25.0" minHeight="20.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="25.0" minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="30.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="25.0" minHeight="20.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="25.0" minHeight="20.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="25.0" minHeight="20.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="25.0" minHeight="20.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      </rowConstraints>
+                    </GridPane>
+                  </children>
+                  <padding>
+                    <Insets bottom="2.0" left="4.0" right="4.0" top="2.0" />
+                  </padding>
+                </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Temperaturas">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                    <BarChart fx:id="bcjavalinas" legendSide="BOTTOM" prefHeight="569.0" prefWidth="596.0" verticalGridLinesVisible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                      <xAxis>
+                        <CategoryAxis side="BOTTOM" />
+                      </xAxis>
+                      <yAxis>
+                        <NumberAxis minorTickCount="5" side="LEFT" tickLabelGap="3.0" tickLabelsVisible="true" upperBound="50.0" />
+                      </yAxis>
+                    </BarChart>
+                  </children>
+                </AnchorPane>
+              </content>
+            </Tab>
+                  <Tab text="Configuración">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <GridPane hgap="5.0" layoutX="15.0" layoutY="-29.0" prefHeight="600.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Label prefHeight="17.0" prefWidth="107.0" text="V inicial  [RPM] :" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                                    <Label text="V máxima :" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                                    <Label text="Aceleración :" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                                    <TextField fx:id="txtFldViX" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <TextField fx:id="txtFldVmX" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <TextField fx:id="txtFldAccX" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <Label text="V inicial  [RPM] :" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                    <Label layoutX="10.0" layoutY="62.0" text="V máxima :" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                    <Label layoutX="10.0" layoutY="101.0" text="Aceleración :" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                    <TextField fx:id="txtFldViY" layoutX="98.0" layoutY="18.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                    <TextField fx:id="txtFldVmY" layoutX="98.0" layoutY="58.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                    <TextField fx:id="txtFldAccY" layoutX="98.0" layoutY="97.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                                    <Label layoutX="10.0" layoutY="38.0" prefHeight="17.0" prefWidth="107.0" text="V inicial  [RPM] :" GridPane.rowIndex="6" />
+                                    <Label layoutX="10.0" layoutY="110.0" text="V máxima :" GridPane.rowIndex="7" />
+                                    <Label layoutX="10.0" layoutY="182.0" text="Aceleración :" GridPane.rowIndex="8" />
+                                    <TextField fx:id="txtFldViZ" layoutX="114.0" layoutY="34.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                    <TextField fx:id="txtFldVmZ" layoutX="114.0" layoutY="34.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                    <TextField fx:id="txtFldAccZ" layoutX="114.0" layoutY="34.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                                    <Label layoutX="231.0" layoutY="38.0" text="V inicial  [RPM] :" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                                    <Label layoutX="231.0" layoutY="110.0" text="V máxima :" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                                    <Label layoutX="231.0" layoutY="182.0" text="Aceleración :" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                                    <TextField fx:id="txtFldViR" layoutX="343.0" layoutY="34.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                                    <TextField fx:id="txtFldVmR" layoutX="343.0" layoutY="34.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                                    <TextField fx:id="txtFldAccR" layoutX="343.0" layoutY="34.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+                                    <Label text="Pórtico" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+                                    <Label layoutX="169.0" layoutY="26.0" text="Carro" GridPane.columnIndex="3" GridPane.halignment="CENTER" />
+                                    <Label text="Elevador" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                                    <Label text="Rotador" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                                    <Button mnemonicParsing="false" onAction="#handleButtonConfigX" prefHeight="25.0" prefWidth="130.0" text="Configurar" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                    <Button mnemonicParsing="false" onAction="#handleButtonConfigY" prefHeight="25.0" prefWidth="129.0" text="Configurar" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                                    <Button mnemonicParsing="false" onAction="#handleButtonConfigZ" prefHeight="25.0" prefWidth="130.0" text="Configurar" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                                    <Button mnemonicParsing="false" onAction="#handleButtonConfigR" prefHeight="25.0" prefWidth="132.0" text="Configurar" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+                          <Button mnemonicParsing="false" onAction="#handleButtonConfigAll" prefHeight="25.0" prefWidth="132.0" text="Configurar Todos" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                                 </children>
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="104.0" minWidth="10.0" prefWidth="104.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="128.0" minWidth="10.0" prefWidth="110.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="119.0" minWidth="10.0" prefWidth="119.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="112.0" minWidth="10.0" prefWidth="112.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="112.0" minWidth="10.0" prefWidth="112.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                              </GridPane>
+                           </children>
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="Reportes">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TextArea fx:id="txtAreaLog" layoutX="87.0" layoutY="69.0" prefHeight="571.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+          </tabs>
+          <HBox.margin>
+            <Insets />
+          </HBox.margin>
+        </TabPane>
+      </children>
+    </HBox>
+  </children>
+  <padding>
+    <Insets />
+  </padding>
+</AnchorPane>

@@ -1,13 +1,5 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package Bases;
 
-/**
- *
- * @author Francisco
- */
 public class cnc {
    public native void init();
    public native int modbus_connect(String IP,short port);

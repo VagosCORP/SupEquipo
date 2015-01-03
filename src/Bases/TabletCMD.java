@@ -60,7 +60,7 @@ public class TabletCMD implements OnComunicationListener{
 	}
 
 	@Override
-	public void onDataReceived(String dato) {
+	public void onDataReceived(String dato, int[] ndato) {
 		tarea += dato;
                 
 		if (dato.endsWith("/")) {
